@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <report
+            id = "proyecto_odoo_report_alumno"
+            string = "Informe del Alumno"
+            model = "proyecto_odoo.alumno"
+            report_type = "qweb-pdf"
+            name = "proyecto_odoo.report_alumno_view"
+            file = "proyecto_odoo.report_alumno_view"/>
+
+        <template id = "report_alumno_view">
+            <t t-call = "web.html_container">
+                <t t-foreach = "docs" t-as = "doc">
+                    <div class = "page">
+                        <h2>
+                            <t t-esc = "doc.name"/>
+                        </h2>
+                        <div>
+                            <strong>Apellidos:</strong>
+                            <t t-esc = "doc.apellidos"/>
+                        </div>
+                        <div>
+                            <strong>Fecha de nacimiento:</strong>
+                            <t t-esc = "doc.fecha_nac"/>
+                        </div>
+                        <div>
+                            <strong>Ciclo:</strong>
+                            <t t-esc = "doc.ciclo"/>
+                        </div>
+                        <div>
+                            <strong>Nota media:</strong>
+                            <t t-esc = "doc.nota_media"/>
+                        </div>
+                        <div>
+                            <strong>Nota:</strong>
+                            <t t-esc = "doc.nota_media_txt"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_proyecto_odoo_alumno,access.proyecto_odoo.alumno,model_proyecto_odoo_alumno,proyecto_odoo_administrador,1,1,1,1
+access_proyecto_odoo_empresa,access.proyecto_odoo.empresa,model_proyecto_odoo_empresa,proyecto_odoo_administrador,1,1,1,1
