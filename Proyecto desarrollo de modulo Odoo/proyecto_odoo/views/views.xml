@@ -1,0 +1,155 @@
+<odoo>
+  <data>
+    <!--VISTAS-->
+    <!--Alumno Tree y Form-->
+    <record model = "ir.ui.view" id = "proyecto_odoo.alumno_tree">
+      <field name = "name">proyecto_odoo.alumno.tree</field>
+      <field name = "model">proyecto_odoo.alumno</field>
+      <field name = "arch" type = "xml">
+        <tree>
+          <field name = "name"/>
+          <field name = "apellidos"/>
+          <field name = "fecha_nac"/>
+          <field name = "ciclo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model = "ir.ui.view" id = "proyecto_odoo.alumno_form">
+      <field name = "name">proyecto_odoo.alumno.form</field>
+      <field name = "model">proyecto_odoo.alumno</field>
+      <field name = "arch" type = "xml">
+        <form>
+          <group colspan = "2" col = "2">
+            <field name = "name"/>
+            <field name = "apellidos"/>
+            <field name = "fecha_nac"/>
+            <field name = "ciclo"/>
+            <field name = "nota_media"/>
+            <field name = "nota_media_txt"/>
+            <field name = "empresa"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!--Alumno Search View-->
+    <record model = "ir.ui.view" id = "proyecto_odoo.alumno_search_view">
+      <field name = "name">proyecto_odoo.alumno.search</field>
+      <field name = "model">proyecto_odoo.alumno</field>
+      <field name = "arch" type = "xml">
+        <search>
+          <field name = "name" string = "Nombre"/>
+          <field name = "apellidos" string = "Apellidos"/>
+        </search>
+      </field>
+    </record>
+
+    <!--Empresa Tree y Form-->
+    <record model = "ir.ui.view" id = "proyecto_odoo.empresa_tree">
+      <field name = "name">proyecto_odoo.empresa.tree</field>
+      <field name = "model">proyecto_odoo.empresa</field>
+      <field name = "arch" type = "xml">
+        <tree>
+          <field name = "name"/>
+          <field name = "direccion"/>
+          <field name = "alumnos"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model = "ir.ui.view" id = "proyecto_odoo.empresa_form">
+      <field name = "name">proyecto_odoo.empresa.form</field>
+      <field name = "model">proyecto_odoo.empresa</field>
+      <field name = "arch" type = "xml">
+        <form>
+          <group colspan = "2" col = "2">
+            <field name = "name"/>
+            <field name = "direccion"/>
+            <field name = "alumnos"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <!--ACCIONES DE VENTANA-->
+    <!--Alumno-->
+    <record model = "ir.actions.act_window" id = "proyecto_odoo.alumno_action_window">
+      <field name = "name">proyecto_odoo.alumno.action_window</field>
+      <field name = "res_model">proyecto_odoo.alumno</field>
+      <field name = "view_mode">tree,form</field>
+    </record>
+
+    <!--Empresa-->
+    <record model = "ir.actions.act_window" id = "proyecto_odoo.empresa_action_window">
+      <field name = "name">proyecto_odoo.empresa.action_window</field>
+      <field name = "res_model">proyecto_odoo.empresa</field>
+      <field name = "view_mode">tree,form</field>
+    </record>
+
+
+    <!--MENU ITEMS-->
+    <menuitem name = "Proyecto Odoo" id = "proyecto_odoo.menu_root" groups = "base.group_user"/>
+    <menuitem name = "Alumnos" id = "proyecto_odoo.alumno_menu" parent = "proyecto_odoo.menu_root" action = "proyecto_odoo.alumno_action_window" groups = "base.group_user"/>
+    <menuitem name = "Empresas" id = "proyecto_odoo.empresa_menu" parent = "proyecto_odoo.menu_root" action = "proyecto_odoo.empresa_action_window" groups = "base.group_user"/>
+
+
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="proyecto_odoo.list">
+      <field name="name">proyecto_odoo list</field>
+      <field name="model">proyecto_odoo.proyecto_odoo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="proyecto_odoo.action_window">
+      <field name="name">proyecto_odoo window</field>
+      <field name="res_model">proyecto_odoo.proyecto_odoo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="proyecto_odoo.action_server">
+      <field name="name">proyecto_odoo server</field>
+      <field name="model_id" ref="model_proyecto_odoo_proyecto_odoo"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="proyecto_odoo" id="proyecto_odoo.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="proyecto_odoo.menu_1" parent="proyecto_odoo.menu_root"/>
+    <menuitem name="Menu 2" id="proyecto_odoo.menu_2" parent="proyecto_odoo.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="proyecto_odoo.menu_1_list" parent="proyecto_odoo.menu_1"
+              action="proyecto_odoo.action_window"/>
+    <menuitem name="Server to list" id="proyecto_odoo" parent="proyecto_odoo.menu_2"
+              action="proyecto_odoo.action_server"/>
+-->
+  </data>
+</odoo>
