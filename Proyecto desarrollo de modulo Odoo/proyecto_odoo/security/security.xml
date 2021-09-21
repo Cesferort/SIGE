@@ -1,7 +1,0 @@
-<odoo>
-    <data>
-        <record id = "proyecto_odoo_administrador" model = "res.groups">
-            <field name = "name">Proyecto Odoo / Administrador</field>
-        </record>
-    </data>
-</odoo>

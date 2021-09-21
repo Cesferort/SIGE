@@ -1,0 +1,44 @@
+# visual studio code
+.vscode
+
+# jetbrains
+.idea
+
+# Eclipse stuff
+.eclipse
+.metadata
+
+# Nodejs stuff
+node_modules
+package_lock.json
+
+# extensions
+*.rar
+*.zip
+*.iso
+*.ink
+*.tgz
+*.class
+
+# Thumbnails created by windows
+Thumbs.db
+
+# Files build by Visual Studio
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.bak
+*.cache
+*.ilk
+.log
+[Bb]in
+[Dd]ebug/
+.sbr
+obj/
+[Rr]elease/
+_ReSharper*/
